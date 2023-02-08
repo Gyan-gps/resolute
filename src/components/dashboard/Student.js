@@ -63,9 +63,9 @@ const Student = () => {
               <td>{student.class}</td>
               <td>{student.rollNumber}</td>
               <td className='action'>
-                <div onClick={()=>{handleView(student.id)}}>v</div>
-                <div onClick={()=>{handleEdit(student.id)}}>e</div>
-                <div onClick={()=>{handleDelete(student.id)}}>d</div>
+                <div onClick={()=>{handleView(student.id)}}>view</div>
+                <div onClick={()=>{handleEdit(student.id)}}>edit</div>
+                <div onClick={()=>{handleDelete(student.id)}}>delete</div>
                 </td>
               </tr>
             })
