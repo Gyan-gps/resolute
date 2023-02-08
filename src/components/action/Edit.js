@@ -1,13 +1,16 @@
 import { collection, doc, getDoc, setDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
 import { db } from '../../config/firebaseInitisize';
+import { EDIT } from '../../redux/action';
 import Common from '../common/Common';
 
 const Edit = () => {
     const [student,setStudent] = useState("");
     const {id} = useParams();
-
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     console.log(id)
 
     useEffect(()=>{
@@ -17,7 +20,7 @@ const Edit = () => {
                 const docRef = doc(db, "students", id);
                 const docSnap = await getDoc(docRef);
                 setStudent(docSnap.data())
-                console.log({...docSnap.data()},docSnap);
+                // console.log({...docSnap.data()},docSnap);
             } catch (error) {
                 console.log(error);
             }
@@ -34,9 +37,15 @@ const Edit = () => {
         // console.log(student);
         try {
 
-          const citiesRef = collection(db, "students",id);
+          // const citiesRef = collection(db, "students",id);
     
-          await setDoc(doc(citiesRef), student)
+          await setDoc(doc(db,"students",id), {...student})
+
+          dispatch({
+            type:EDIT,
+            payload:student
+          })
+          navigate("/");
     
         } catch (error) {
           console.log(error);

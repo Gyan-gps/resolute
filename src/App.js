@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import Edit from "./components/action/Edit";
 import View from "./components/action/View";
@@ -15,7 +17,12 @@ const PrivateRoute = ({user})=>{
 }
 
 function App() {
-  const user = JSON.parse(localStorage.getItem("user"));
+  // const user = JSON.parse(localStorage.getItem("user"));
+  const {user} = useSelector(state=>state);
+  // const [user,setUser]
+  // useEffect(()=>{
+
+  // })
   return (
     <div className="App">
       <TopNavbar />

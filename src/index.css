@@ -54,7 +54,7 @@ thead{
 
 .sidenav div{
   display: flex;
-  width: 80%;
+  width: 70%;
   flex-direction: column;
   align-items: center;
   padding: 12px 24px;
@@ -69,11 +69,15 @@ thead{
 }
 
 .action{
-  width: 100px;
+  /* width: 100px; */
+  width: 200px;
+  font-size: 24px;
   display: flex;
+  margin: 0px 5px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 table{

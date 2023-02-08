@@ -1,11 +1,16 @@
 import { addDoc, collection, doc, getDocs, setDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { db } from '../../config/firebaseInitisize';
+import { ADD_STUDENT, GET_USER } from '../../redux/action';
 import Common from '../common/Common';
 
 const AddStudent = () => {
 
-  const user = JSON.parse(localStorage.getItem("user"));
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const {user} = useSelector(state=>state)
 
   const [student,setStudent] = useState({
     firstName:"",
@@ -32,7 +37,13 @@ const AddStudent = () => {
       const citiesRef = collection(db, "students");
 
       await setDoc(doc(citiesRef), {...student,uid:user.uid})
-
+      .then(()=>{
+        dispatch({
+          type:ADD_STUDENT,
+          payload:{...student,uid:user.uid}
+        })
+      })
+      navigate("/")
     } catch (error) {
       console.log(error);
     }

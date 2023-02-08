@@ -1,12 +1,15 @@
 import { collection, deleteDoc, doc, getDocs, query, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../../config/firebaseInitisize';
+import { SETDATA } from '../../redux/action';
 
 const Student = () => {
-  const user = JSON.parse(localStorage.getItem("user"));
-  const [students,setStudents] = useState([])
-
+  // const user = JSON.parse(localStorage.getItem("user"));
+  const {user,students} = useSelector(state=>state)
+  // const [students,setStudents] = useState([])
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(()=>{
@@ -21,7 +24,10 @@ const Student = () => {
         console.log(doc.id, " => ", doc.data(),doc.id);
         array.push({...doc.data(),id:doc.id})
       });
-      setStudents(array)
+      dispatch({
+        type:SETDATA,
+        payload:array
+      })
     }
     getData();
   },[])
@@ -44,7 +50,7 @@ const Student = () => {
 
   return (
     <div >
-      <h3>Manage Student</h3>
+      <h3 className="heading">Manage Student</h3>
       <table>
         <thead>
           <tr>
