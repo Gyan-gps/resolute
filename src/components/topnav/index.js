@@ -7,7 +7,7 @@ const TopNavbar = () => {
   return (
     <div className='topnav'>
       <h1>LOGO</h1>
-      <div> {user.email}</div>
+      <div> {user&user.email}</div>
     </div>
   )
 }
