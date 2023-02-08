@@ -3,11 +3,11 @@ import React from 'react'
 
 const TopNavbar = () => {
   const user = JSON.parse(localStorage.getItem("user"));
-
+  console.log(user.email);
   return (
     <div className='topnav'>
       <h1>LOGO</h1>
-      <div> {user&user.email}</div>
+      <div> email</div>
     </div>
   )
 }
