@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.left{
+  width:30%;
+}
+
+.right{
+  width: 70%;
+}
+
+.topnav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+}
+
+.sidenav{
+  /* display: flex; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 12px 24px;
+  gap: 16px; */
+}
+
+thead{
+  width: 1000px;
+  height: 48px;
+  color: white;
+  background: #F33823;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.sidenav div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 16px;
+}
+
+.sidenav div:hover{
+  background: #F33823;
+  border-radius: 5px;
+
+}
+
+.action{
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+table{
+  width: 100%;
+  padding: 0px 10px;
+}
+
+thead{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+tbody{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+tr{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
