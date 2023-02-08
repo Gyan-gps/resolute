@@ -23,7 +23,7 @@ const Login = () => {
       // Signed in 
       const data = userCredential.user;
       // console.log(user)
-      localStorage.setItem("user",JSON.stringify({name:user.name,uid:data.uid}))
+      localStorage.setItem("user",JSON.stringify({name:user.name,uid:data.uid,email:user.email}))
       
       try {
         const citiesRef = collection(db, "users");
