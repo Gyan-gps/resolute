@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../../config/firebaseInitisize';
-import { SETDATA } from '../../redux/action';
+import { SETDATA,DELETE_STUDENT } from '../../redux/action';
 
 const Student = () => {
   // const user = JSON.parse(localStorage.getItem("user"));
@@ -43,6 +43,10 @@ const Student = () => {
   const handleDelete =async (id)=>{
     console.log(id);
     await deleteDoc(doc(db,"students",id))
+    dispatch({
+      type:DELETE_STUDENT,
+      payload:id
+    })
 
     // let bool = confirm("Are you sure you want to delete this item")
     // console.log(bool)
