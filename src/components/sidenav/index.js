@@ -35,7 +35,7 @@ const SideNavbar = () => {
         }} style={{backgroundColor:text==="addstudent"?"#F33823":""}}>Add Student</div>
       <div onClick={()=>{
         setText("")
-        navigate("/addstudent")
+        navigate("/")
         }} style={{backgroundColor:text===""?"#F33823":""}}>Manage Student</div>
         {
           user?<div style={{backgroundColor:text==="login"?"#F33823":""}} onClick={()=>handleLogout()} >Logout</div>:
