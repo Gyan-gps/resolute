@@ -62,7 +62,7 @@ const Login = () => {
         <br/><input type="email" name="email" value={user.email} onChange={(e)=>handleChange(e)} placeholder='Enter Your Email' />
         <br/><input type="password" name="password" value={user.password} onChange={(e)=>handleChange(e)} placeholder='Enter Your Password' />
         <br/>
-        <button onClick={handleSubmit}>ADD</button>
+        <button onClick={handleSubmit}>SignUp</button>
       </div>
     </div>
   )
