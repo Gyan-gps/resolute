@@ -29,7 +29,7 @@ export  const reducer = (state=intialState,action)=>{
         case DELETE_STUDENT:
             return {
                 ...state,
-                students:state.students.filter((prev)=>action.payload.id!==prev.id)
+                students:state.students.filter((prev)=>action.payload!==prev.id)
             }
         case LOGOUT:
             return {
